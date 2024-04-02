@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "Sriracha"; /* Replace with the actual font family name */
+    src: url("Sriracha-Regular.ttf") format("truetype");
+}
+
+  
+body {
+    margin: 0;
+    font-family: "Sriracha", Roboto, sans-serif;
+}
+
+span.rowTwo {
+font-family: Roboto;
+}
+    
+h1 {
+    text-align: center;
+}
+
+#container {
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;   
+}
+
+span {
+    letter-spacing: 1px;
+}
+
+.row {
+    display: flex;
+    padding: auto;
+    text-align: center;
+    padding: 1rem;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+
+
+#firstrow, #secondrow, #thirdrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    
+}
+
+.headingRow {
+    margin: 0.5rem 0;
+    font-size: large;
+}
+
+
+
+.card {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgb(228, 239, 239);
+    margin: 0.3rem 0.3rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 3rem;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 1rem;
+}
+
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.selected {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+    background-image: linear-gradient(rgb(5, 97, 5), rgb(78, 142, 206)) !important;
+    color: white;
+}
+
+
+sup {
+    position: relative;
+    bottom: 0.3rem;
+}
+
+.rowOne {
+    background-color: rgb(144, 149, 238);
+}
+
+.rowTwo {
+    background-color: lightcyan;
+}
+
+.rowThree {
+    background-color: rgb(234, 168, 225);
+}
+
+
+/* #submit#submit#submitButton {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    align-items: center;
+    margin: auto;
+} */
+
+#correctAnswers {
+    display: flex;
+    background-color: azure;
+    justify-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+#correctAnswers span {
+    width: 30%;
+    margin: 2rem;
+    text-align: center;
+
+}
+
+sub {
+    position: relative;
+    top: 0.2rem;
+}
+
+
+.answers {
+    display: flex;
+    min-width: 100%;
+}
+
+
+
+#submitButtonWrapper {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submitButton {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #a3efeb;
+    background-image: linear-gradient(rgb(108, 36, 201), rgb(20, 6, 66));
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  #submitButton:hover {
+    background-color: #3323c4;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  #submitButton:active {
+    transform: translateY(-1px);
+    background-color: #584bd1;
+  }
