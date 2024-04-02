@@ -5,6 +5,8 @@ let backText = document.getElementById('backText');
 let front = document.querySelector('.front');
 let back = document.querySelector('.back');
 let showButton = document.getElementById('showButton')
+const imgfront = document.getElementById('idimgfront');
+const imgback = document.getElementById('idimgback');
 let previousListener;
 let showButtonListener;
 let pressed = 0;
@@ -15,7 +17,28 @@ card.addEventListener( 'click', function() {
 
 
 let data = [
-  {link: '', back: ''},
+  {front: 'Синтетикалық талшықтардың ішіндегі кең тарағаны капрон талшығы. \
+  Ол аминкапрон қышқылынан синтезделеді. Аминкапрон қышқылы формуласы:', 
+  pic: './data/aminkapron.jpg'},
+  {front: 'Синтетикалық талшықтардың кең тарағаны капрон талшығы. Капрон талшығы аминкапрон қышқылынан алынады. Қышқыл құрамында негіздік және \
+  қышқылдық қасиет көрсететін екі функционалдық топ бар, олар өзара поликонденсация \
+  реакциясына түседі. Поликонденсация реациясын жызып көріңіз. Реакция нәтижесінде макромолекуласы \
+  сызықтық құрылысты болатын жоғары молекулалы зат түзіледі. ', 
+  pic: './data/aminkapronpol.jpg'},
+  {front: 'Бұл полимер/талшық вамидтік тобы бар полиамидті талшықтар қатарына жатады. \
+  Бұл зат маталары кйкеліске төзімді, мыжылмайды. Бірақ бұл зат қышқыл мен жоғары температура \
+  әсеріне төзімсіз, сондықтан оны ыстық үтікпен үтіктеуге болмайды.Бұл зат пластмассынан \
+  алынған бұйымдардың беріктігі мен қызмет ету мерзімі өті жоғары.', back: 'Капрон'},
+  {front: 'Бұл талшық та химиялық, синтетикалық полиамидті талшықтар қатарына жатады \
+  Бұл талшықты терефтал қышқылы мен парафенилендиаминнің поликонденсация реакциясымен алады. \
+  Реакцияны жазыңыз. Бұдан оқ өтпейтін кеудешелер, аса жеңіл ұшу аппаратарын жасауда қолданады.', 
+  pic: './data/kevlar.jpg'},
+  {front: 'Бұл талшық полиэфир талшығы, терефтал қышқылы HOOC-C6H4-COOH және этиленгликольді \
+  поликонденсациялап алады. Бұл талшық жоғары беріктілігі, жарыққа, сілті мен қышқыл \
+  ерітінділерінің әсеріне төзімділігімен ерекшеленеді. Диэлектрик, алайда концентрлі қышқылдар оны \
+  бүлдіреді. Жоғары сапалы маталар мен тоқыма бұйымдарын алу үшін бұл затты жүнге қосады. \
+  Оны транспортер таспаларын, белдіктер, кілем, парус т.б. алуға қолданады.', 
+  pic: './data/lavsan.jpg'},
   {front: 'Иілгіштік қасиеті бар, қыздырғанда пішінін өзгертіп, салқындатқанда жаңа \
   пішінін сақтайтан полимерлер негізінде алынған заттар ....', back: 'Пластмассалар'},
   {front: `Eң көп таралған полимерлердің бірі, қолмен ұстағанда май тәрізді \
@@ -50,6 +73,10 @@ let data = [
 
 function App() {
   let randQuestion = getRandomItem(data);
+  imgback.removeAttribute('src');
+  imgfront.removeAttribute('src');
+  backText.innerHTML = "";
+  frontText.innerHTML = "";
   if (card.classList.contains('is-flipped')) {
     back.classList.remove('makeBack');
     back.classList.add('makeFront');
@@ -58,7 +85,11 @@ function App() {
     }
     front.classList.remove('makeFront');
     front.classList.add('makeBack');
-    frontText.innerHTML = randQuestion.back;
+    if (randQuestion.back) { 
+      frontText.innerHTML = randQuestion.back;
+    } else if (randQuestion.pic) {
+      imgfront.setAttribute('src', `${randQuestion.pic}`);
+    }
   } else {
     front.classList.remove('makeBack');
     front.classList.add('makeFront');
@@ -67,7 +98,11 @@ function App() {
     }
     back.classList.remove('makeFront');
     back.classList.add('makeBack');
+    if (randQuestion.back) {
     backText.innerHTML = randQuestion.back;
+    } else if (randQuestion.pic) {
+      imgback.setAttribute('src', `${randQuestion.pic}`);
+    }
   }
 }
 

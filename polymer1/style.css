@@ -43,6 +43,8 @@ body {
   width: 100%;
   backface-visibility: hidden;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .back {
