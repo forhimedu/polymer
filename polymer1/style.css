@@ -45,13 +45,18 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
+
 
 .back {
   transform: rotateY( 180deg );
 }
 
 .makeFront {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(218, 168, 168);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
@@ -61,6 +66,9 @@ body {
 }
 
 .makeBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(170, 170, 219);
   font-weight: bold;
   font-family: "Comfortaa", sans-serif;
@@ -111,7 +119,7 @@ body {
 @media (min-width: 768px) {
   #container {
     width: 50rem;
-    max-height: 75vh;
+    max-height: 90vh;
   }
 
   #nextButton {
@@ -125,8 +133,8 @@ p {
 
 @media only screen and (max-width: 768px) {
   #container {
-    width: 90vw;
-    height: 65vh;
+    width: 98vw;
+    max-height: 80vh;
   }
   .makeFront, .makeBack {
     font-size: 1.2rem;
